@@ -23,13 +23,26 @@ int main()
     //Looking at string datatype
     //=============================
 
-    int age = 29;
-    string fName = "Shannon";
-    string lName = "Thomas";
-    int currentYear = 2022;
-    int yearBorn = currentYear - age;
+    // int age = 29;
+    // string fName = "Shannon";
+    // string lName = "Thomas";
+    // int currentYear = 2022;
+    // int yearBorn = currentYear - age;
 
-    cout << "Hello " << fName << " " << lName << "!" << endl;
-    cout << "You are " << age << " years old and born in " << yearBorn << "." << endl;
+    // cout << "Hello " << fName << " " << lName << "!" << endl;
+    // cout << "You are " << age << " years old and born in " << yearBorn << "." << endl;
+
+    //=============================
+    //Basic User Input
+    //=============================
+
+    int favNum;
+    string name;
+
+    cout << "Enter your favorite number: ";
+    cin >> favNum;
+    cout << "Enter your first name: ";
+    cin >> name;
+    cout << "Hello " << name << ", your favorite number is " << favNum << endl;
 
 }
