@@ -41,7 +41,7 @@ int main()
 
     cout << "Enter your favorite number: ";
     cin >> favNum;
-    cout << "Enter your first name: ";
+    cout << "Enter first name: ";
     cin >> name;
     cout << "Hello " << name << ", your favorite number is " << favNum << endl;
 
