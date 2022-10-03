@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-
     string sword;
     string letterguess;
     string wordguess;
@@ -99,8 +98,8 @@ int main()
             
         if(letterguess.length() > 1)
         {
-        endgame = true;
-        cout << "Run the program again. You can only input one letter at a time.";
+            endgame = true;
+            cout << "Run the program again. You can only input one letter at a time." << endl;
         }
         if(letterguess == "")
         {
@@ -108,6 +107,12 @@ int main()
             cout << "Run the program again. You did not insert a letter." << endl;
         }
     }
+
+    // if(wordguess == "")
+    //     {
+    //         endgame = true;    
+    //         cout << "Run the program again. You did not insert a word." << endl;
+    //     }
 
     if(sworddash.at(0) == letter1)
     {
@@ -135,9 +140,10 @@ int main()
     {
         cout << sworddash << endl;
         cout << "You have " << guessesleft << " guesses left. Take a guess at the word: ";
-        cin >> wordguess;
+        cin.ignore();
+        getline(cin, wordguess);
         
-        if (wordguess.length() == 5)
+        if(wordguess.length() == 5)
         {
             wordguess1 = tolower(wordguess.at(0));
             wordguess2 = tolower(wordguess.at(1));
@@ -225,7 +231,7 @@ int main()
         if(letterguess.length() > 1)
         {
             endgame = true;
-            cout << "Run the program again. You can only input one letter at a time.";
+            cout << "Run the program again. You can only input one letter at a time." << endl;
         }
 
         if(letterguess == "")
@@ -348,18 +354,18 @@ int main()
                 sworddash.at(4) = guesschar;
                 cout << "You guessed the fifth letter correct!" << endl;
             }
-    }
 
-    if(letterguess.length() > 1)
-        {
-            endgame = true;
-            cout << "Run the program again. You can only input one letter at a time.";
-        }
-    if(letterguess == "")
-        {
-            endgame = true;    
-            cout << "Run the program again. You did not insert a letter." << endl;
-        }
+            if(letterguess.length() > 1)
+                {
+                    endgame = true;
+                    cout << "Run the program again. You can only input one letter at a time." << endl;
+                }
+            if(letterguess == "")
+                {
+                    endgame = true;    
+                    cout << "Run the program again. You did not insert a letter." << endl;
+                }
+    }
 
     if(endgame == false)
     {
@@ -474,19 +480,20 @@ int main()
         {
             sworddash.at(4) = guesschar;
             cout << "You guessed the fifth letter correct!" << endl;
-        }  
-    }
-
-    if(letterguess.length() > 1)
+        }
+        if(letterguess.length() > 1)
         {
             endgame = true;
-            cout << "Run the program again. You can only input one letter at a time.";
+            cout << "Run the program again. You can only input one letter at a time." << endl;
         }
-    if(letterguess == "")
+        if(letterguess == "")
         {
             endgame = true;    
             cout << "Run the program again. You did not insert a letter." << endl;
         }
+    }
+
+    
 
     if(endgame == false)
     {
@@ -600,18 +607,19 @@ int main()
             sworddash.at(4) = guesschar;
             cout << "You guessed the fifth letter correct!" << endl;
         }
-    }
-
-    if(letterguess.length() > 1)
+        if(letterguess.length() > 1)
         {
             endgame = true;
-            cout << "Run the program again. You can only input one letter at a time.";
+            cout << "Run the program again. You can only input one letter at a time." << endl;
         }
         if(letterguess == "")
         {
             endgame = true;    
             cout << "Run the program again. You did not insert a letter." << endl;
         }
+    }
+
+    
 
     if(endgame == false)
     {
@@ -620,18 +628,18 @@ int main()
         {
             if(sworddash.at(1) == letter2)
             {
-                    if(sworddash.at(2) == letter3)
+                if(sworddash.at(2) == letter3)
+                {
+                    if(sworddash.at(3) == letter4)
                     {
-                            if(sworddash.at(3) == letter4)
-                            {
-                                if(sworddash.at(4) == letter5)
-                                {
-                                    endgame = true;
-                                    cout << "You guessed the word correctly in " << guesses << " guesses! You Win!" << endl;
-                                }
-                            }
+                        if(sworddash.at(4) == letter5)
+                        {
+                            endgame = true;
+                            cout << "You guessed the word correctly in " << guesses << " guesses! You Win!" << endl;
+                        }
                     }
                 }
+            }
         }
     }
     //============================================
