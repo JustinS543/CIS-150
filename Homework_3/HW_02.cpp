@@ -35,18 +35,15 @@ int main()
 
     if (progfail == false)
     {
-        if (selection == 1 || selection == 2 || selection == 3 || selection == 4)
+        cout << endl << "Enter the first number: ";
+        cin >> firstnum;
+        cout << "Enter the second number: ";
+        cin >> secondnum;
+        cout << endl << "You chose to perform the following operation:" << endl;
+        if (secondnum == 0)
         {
-            cout << endl << "Enter the first number: ";
-            cin >> firstnum;
-            cout << "Enter the second number: ";
-            cin >> secondnum;
-            cout << endl << "You chose to perform the following operation:" << endl;
-            if (secondnum == 0)
-            {
-                progfail = true;
-                cout << "You are trying to break my program. You cannot divide by 0." << endl;
-            }
+            progfail = true;
+            cout << "You are trying to break my program. You cannot divide by 0." << endl;
         }
     }
 
@@ -62,15 +59,15 @@ int main()
         }
         if (selection == 2)
         {
-            cout << firstnum << " + " << secondnum << " = " << firstnum - secondnum << endl;
+            cout << firstnum << " - " << secondnum << " = " << firstnum - secondnum << endl;
         }
         if (selection == 3)
         {
-            cout << firstnum << " + " << secondnum << " = " << firstnum * secondnum << endl;
+            cout << firstnum << " * " << secondnum << " = " << firstnum * secondnum << endl;
         }
         if (selection == 4)
         {
-            cout << firstnum << " + " << secondnum << " = " << firstnum / secondnum << endl;
+            cout << firstnum << " / " << secondnum << " = " << firstnum / secondnum << endl;
         }
         cout << "Thanks for using the program. Bye" << endl;
     }

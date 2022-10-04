@@ -31,7 +31,7 @@ int main()
     cout << "Please enter a 5 letter word: ";
     cin >> sword;
 
-    if(sword.length() == 5) //testing length and if successful will change each value to char
+    if (sword.length() == 5) //testing length and if successful will change each value to char
     {
         endgame = false;
         letter1 = tolower(sword.at(0));
@@ -40,14 +40,14 @@ int main()
         letter4 = tolower(sword.at(3));
         letter5 = tolower(sword.at(4));
     }
-    
-    if(sword.length() < 5)
+
+    if (sword.length() < 5)
     {
         endgame = true;
         cout << "Run the program again. The word to guess is too short." << endl;
     }
 
-    if(sword.length() > 5)
+    if (sword.length() > 5)
     {
         endgame = true;
         cout << "Run the program again. The word to guess is too long." << endl;
@@ -56,76 +56,74 @@ int main()
     //============================================
     //First letter guess
     //============================================
-    
-    if(endgame == false)
+
+    if (endgame == false)
     {
         cout << sworddash << endl;
         cout << "Guess a letter: ";
         cin.ignore();
         getline(cin, letterguess);
-        
-        if(letterguess.length() == 1)
-        {
-            guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
-        
-            if(guesschar == letter1)
-            {
-                sworddash.at(0) = guesschar;
-                cout << "You guessed the first letter correct!" << endl;
-            }
-            if(guesschar == letter2)
-            {
-                sworddash.at(1) = guesschar;
-                cout << "You guessed the second letter correct!" << endl;
-            }
-            if(guesschar == letter3)
-            {
-                sworddash.at(2) = guesschar;
-                cout << "You guessed the third letter correct!" << endl;
-            }
-            if(guesschar == letter4)
-            {
-                sworddash.at(3) = guesschar;
-                cout << "You guessed the fourth letter correct!" << endl;
-            }
-            if(guesschar == letter5)
-            {
-                sworddash.at(4) = guesschar;
-                cout << "You guessed the fifth letter correct!" << endl;
-            }
-        }  
-            
-            
-        if(letterguess.length() > 1)
+
+        if (letterguess.length() > 1)
         {
             endgame = true;
             cout << "Run the program again. You can only input one letter at a time." << endl;
         }
-        if(letterguess == "")
+        if (letterguess == "")
         {
-            endgame = true;    
+            endgame = true;
             cout << "Run the program again. You did not insert a letter." << endl;
+        }
+
+        if (endgame == false)
+        {
+            if (letterguess.length() == 1)
+            {
+                guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
+            }
+            if (guesschar == letter1)
+            {
+                sworddash.at(0) = guesschar;
+                cout << "You guessed the first letter correct!" << endl;
+            }
+            if (guesschar == letter2)
+            {
+                sworddash.at(1) = guesschar;
+                cout << "You guessed the second letter correct!" << endl;
+            }
+            if (guesschar == letter3)
+            {
+                sworddash.at(2) = guesschar;
+                cout << "You guessed the third letter correct!" << endl;
+            }
+            if (guesschar == letter4)
+            {
+                sworddash.at(3) = guesschar;
+                cout << "You guessed the fourth letter correct!" << endl;
+            }
+            if (guesschar == letter5)
+            {
+                sworddash.at(4) = guesschar;
+                cout << "You guessed the fifth letter correct!" << endl;
+            }
         }
     }
 
-    // if(wordguess == "")
-    //     {
-    //         endgame = true;    
-    //         cout << "Run the program again. You did not insert a word." << endl;
-    //     }
-
-    if(sworddash.at(0) == letter1)
+    if (endgame == false)
     {
-        if(sworddash.at(1) == letter2)
+        if (sworddash.at(0) == letter1)
         {
-            if(sworddash.at(2) == letter3)
+            if (sworddash.at(1) == letter2)
             {
-                if(sworddash.at(3) == letter4)
+                if (sworddash.at(2) == letter3)
                 {
-                    if(sworddash.at(4) == letter5)
+                    if (sworddash.at(3) == letter4)
                     {
-                        endgame = true;
-                        cout << "You guessed the word correctly in " << guesses << " guess! You Win!" << endl;
+                        if (sworddash.at(4) == letter5)
+                        {
+                            endgame = true;
+                            cout << "You guessed the word correctly in " << guesses << " guess! You Win!" << endl;
+                        }
                     }
                 }
             }
@@ -136,14 +134,14 @@ int main()
     //Word Guess
     //============================================
 
-    if(endgame == false)
+    if (endgame == false)
     {
         cout << sworddash << endl;
         cout << "You have " << guessesleft << " guesses left. Take a guess at the word: ";
         cin.ignore();
         getline(cin, wordguess);
-        
-        if(wordguess.length() == 5)
+
+        if (wordguess.length() == 5)
         {
             wordguess1 = tolower(wordguess.at(0));
             wordguess2 = tolower(wordguess.at(1));
@@ -151,24 +149,24 @@ int main()
             wordguess4 = tolower(wordguess.at(3));
             wordguess5 = tolower(wordguess.at(4));
 
-            if(wordguess1 == letter1)
+            if (wordguess1 == letter1)
             {
-                if(wordguess2 == letter2)
+                if (wordguess2 == letter2)
                 {
-                    if(wordguess3 == letter3)
+                    if (wordguess3 == letter3)
                     {
-                        if(wordguess4 == letter4)
+                        if (wordguess4 == letter4)
                         {
-                            if(wordguess5 == letter5)
+                            if (wordguess5 == letter5)
                             {
                                 endgame = true;
                                 cout << "You guessed the word correctly in " << guesses;
-                                
-                                if(guesses == 1)
+
+                                if (guesses == 1)
                                 {
                                     cout << " guess! You Win!" << endl;
                                 }
-                                if(guesses > 1)
+                                if (guesses > 1)
                                 {
                                     cout << " guesses! You Win!" << endl;
                                 }
@@ -180,78 +178,78 @@ int main()
         }
     }
 
-    if(endgame == false)
+    if (endgame == false)
     {
-    cout << endl << sworddash << endl;           
-    guessesleft --;
+        cout << endl << sworddash << endl;
+        guessesleft--;
     }
 
     //============================================
     //2nd letter guess
     //============================================
-    
-    if(endgame == false)
+
+    if (endgame == false)
     {
-        guesses ++;
+        guesses++;
         cout << "You have " << guessesleft << " guesses left. Guess a letter: ";
         cin.ignore();
         getline(cin, letterguess);
-        
-        if(letterguess.length() == 1)
+
+        if (letterguess.length() > 1)
         {
-            guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
-        
-            if(guesschar == letter1)
+            endgame = true;
+            cout << "Run the program again. You can only input one letter at a time." << endl;
+        }
+        if (letterguess == "")
+        {
+            endgame = true;
+            cout << "Run the program again. You did not insert a letter." << endl;
+        }
+        if (endgame == false)
+        {
+            if (letterguess.length() == 1)
+            {
+                guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
+            }
+            if (guesschar == letter1)
             {
                 sworddash.at(0) = guesschar;
                 cout << "You guessed the first letter correct!" << endl;
             }
-            if(guesschar == letter2)
+            if (guesschar == letter2)
             {
                 sworddash.at(1) = guesschar;
                 cout << "You guessed the second letter correct!" << endl;
             }
-            if(guesschar == letter3)
+            if (guesschar == letter3)
             {
                 sworddash.at(2) = guesschar;
                 cout << "You guessed the third letter correct!" << endl;
             }
-            if(guesschar == letter4)
+            if (guesschar == letter4)
             {
                 sworddash.at(3) = guesschar;
                 cout << "You guessed the fourth letter correct!" << endl;
             }
-            if(guesschar == letter5)
+            if (guesschar == letter5)
             {
                 sworddash.at(4) = guesschar;
                 cout << "You guessed the fifth letter correct!" << endl;
             }
         }
-
-        if(letterguess.length() > 1)
-        {
-            endgame = true;
-            cout << "Run the program again. You can only input one letter at a time." << endl;
-        }
-
-        if(letterguess == "")
-        {
-            endgame = true;    
-            cout << "Run the program again. You did not insert a letter." << endl;
-        }
     }
 
-    if(endgame == false)
+    if (endgame == false)
     {
-        if(sworddash.at(0) == letter1)
+        if (sworddash.at(0) == letter1)
         {
-            if(sworddash.at(1) == letter2)
+            if (sworddash.at(1) == letter2)
             {
-                if(sworddash.at(2) == letter3)
+                if (sworddash.at(2) == letter3)
                 {
-                    if(sworddash.at(3) == letter4)
+                    if (sworddash.at(3) == letter4)
                     {
-                        if(sworddash.at(4) == letter5)
+                        if (sworddash.at(4) == letter5)
                         {
                             endgame = true;
                             cout << "You guessed the word correctly in " << guesses << " guesses! You Win!" << endl;
@@ -266,12 +264,12 @@ int main()
     //2nd Word Guess
     //============================================
 
-    if(endgame == false)
+    if (endgame == false)
     {
         cout << sworddash << endl;
         cout << "You have " << guessesleft << " guesses left. Take a guess at the word: ";
         cin >> wordguess;
-                
+
         if (wordguess.length() == 5)
         {
             wordguess1 = tolower(wordguess.at(0));
@@ -280,23 +278,23 @@ int main()
             wordguess4 = tolower(wordguess.at(3));
             wordguess5 = tolower(wordguess.at(4));
 
-            if(wordguess1 == letter1)
+            if (wordguess1 == letter1)
             {
-                if(wordguess2 == letter2)
+                if (wordguess2 == letter2)
                 {
-                    if(wordguess3 == letter3)
+                    if (wordguess3 == letter3)
                     {
-                        if(wordguess4 == letter4)
+                        if (wordguess4 == letter4)
                         {
-                            if(wordguess5 == letter5)
+                            if (wordguess5 == letter5)
                             {
                                 endgame = true;
                                 cout << "You guessed the word correctly in " << guesses;
-                                if(guesses == 1)
+                                if (guesses == 1)
                                 {
                                     cout << " guess! You Win!" << endl;
                                 }
-                                if(guesses > 1)
+                                if (guesses > 1)
                                 {
                                     cout << " guesses! You Win!" << endl;
                                 }
@@ -308,7 +306,7 @@ int main()
         }
     }
 
-    if(endgame == false)
+    if (endgame == false)
     {
         cout << endl << sworddash << endl;
         guessesleft --;
@@ -317,67 +315,69 @@ int main()
     //============================================
     //3rd letter guess
     //============================================
-    
-    if(endgame == false)
+
+    if (endgame == false)
     {
-        guesses ++;
+        guesses++;
         cout << "You have " << guessesleft << " guesses left. Guess a letter: ";
         cin.ignore();
         getline(cin, letterguess);
-        
-        if(letterguess.length() == 1)
+
+        if (letterguess.length() > 1)
         {
-            guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
+            endgame = true;
+            cout << "Run the program again. You can only input one letter at a time." << endl;
         }
-            if(guesschar == letter1)
+        if (letterguess == "")
+        {
+            endgame = true;
+            cout << "Run the program again. You did not insert a letter." << endl;
+        }
+        if (endgame == false)
+        {
+            if (letterguess.length() == 1)
+            {
+                guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
+            }
+            if (guesschar == letter1)
             {
                 sworddash.at(0) = guesschar;
                 cout << "You guessed the first letter correct!" << endl;
             }
-            if(guesschar == letter2)
+            if (guesschar == letter2)
             {
                 sworddash.at(1) = guesschar;
                 cout << "You guessed the second letter correct!" << endl;
             }
-            if(guesschar == letter3)
+            if (guesschar == letter3)
             {
                 sworddash.at(2) = guesschar;
                 cout << "You guessed the third letter correct!" << endl;
             }
-            if(guesschar == letter4)
+            if (guesschar == letter4)
             {
                 sworddash.at(3) = guesschar;
                 cout << "You guessed the fourth letter correct!" << endl;
             }
-            if(guesschar == letter5)
+            if (guesschar == letter5)
             {
                 sworddash.at(4) = guesschar;
                 cout << "You guessed the fifth letter correct!" << endl;
             }
-
-            if(letterguess.length() > 1)
-                {
-                    endgame = true;
-                    cout << "Run the program again. You can only input one letter at a time." << endl;
-                }
-            if(letterguess == "")
-                {
-                    endgame = true;    
-                    cout << "Run the program again. You did not insert a letter." << endl;
-                }
+        }
     }
 
-    if(endgame == false)
+    if (endgame == false)
     {
-        if(sworddash.at(0) == letter1)
+        if (sworddash.at(0) == letter1)
         {
-            if(sworddash.at(1) == letter2)
+            if (sworddash.at(1) == letter2)
             {
-                if(sworddash.at(2) == letter3)
+                if (sworddash.at(2) == letter3)
                 {
-                    if(sworddash.at(3) == letter4)
+                    if (sworddash.at(3) == letter4)
                     {
-                        if(sworddash.at(4) == letter5)
+                        if (sworddash.at(4) == letter5)
                         {
                             endgame = true;
                             cout << "You guessed the word correctly in " << guesses << " guesses! You Win!" << endl;
@@ -392,13 +392,13 @@ int main()
     //3rd Word Guess
     //============================================
 
-    if(endgame == false)
+    if (endgame == false)
     {
         cout << sworddash << endl;
-        
+
         cout << "You have " << guessesleft << " guesses left. Take a guess at the word: ";
         cin >> wordguess;
-        
+
         if (wordguess.length() == 5)
         {
             wordguess1 = tolower(wordguess.at(0));
@@ -407,23 +407,23 @@ int main()
             wordguess4 = tolower(wordguess.at(3));
             wordguess5 = tolower(wordguess.at(4));
 
-            if(wordguess1 == letter1)
+            if (wordguess1 == letter1)
             {
-                if(wordguess2 == letter2)
+                if (wordguess2 == letter2)
                 {
-                    if(wordguess3 == letter3)
+                    if (wordguess3 == letter3)
                     {
-                        if(wordguess4 == letter4)
+                        if (wordguess4 == letter4)
                         {
-                            if(wordguess5 == letter5)
+                            if (wordguess5 == letter5)
                             {
                                 endgame = true;
                                 cout << "You guessed the word correctly in " << guesses;
-                                if(guesses == 1)
+                                if (guesses == 1)
                                 {
                                     cout << " guess! You Win!" << endl;
                                 }
-                                if(guesses > 1)
+                                if (guesses > 1)
                                 {
                                     cout << " guesses! You Win!" << endl;
                                 }
@@ -432,10 +432,10 @@ int main()
                     }
                 }
             }
-        }                   
+        }
     }
 
-    if(endgame == false)
+    if (endgame == false)
     {
         cout << endl << sworddash << endl;
         guessesleft --;
@@ -444,69 +444,72 @@ int main()
     //============================================
     //4th letter guess
     //============================================
-    
-    if(endgame == false)
+
+    if (endgame == false)
     {
-        guesses ++;
+        guesses++;
         cout << "You have " << guessesleft << " guesses left. Guess a letter: ";
         cin.ignore();
         getline(cin, letterguess);
-        
-        if(letterguess.length() == 1)
-        {
-            guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
-        }
-        if(guesschar == letter1)
-        {
-            sworddash.at(0) = guesschar;
-            cout << "You guessed the first letter correct!" << endl;
-        }
-        if(guesschar == letter2)
-        {
-            sworddash.at(1) = guesschar;
-            cout << "You guessed the second letter correct!" << endl;
-        }
-        if(guesschar == letter3)
-        {
-            sworddash.at(2) = guesschar;
-            cout << "You guessed the third letter correct!" << endl;
-        }
-        if(guesschar == letter4)
-        {
-            sworddash.at(3) = guesschar;
-            cout << "You guessed the fourth letter correct!" << endl;
-        }
-        if(guesschar == letter5)
-        {
-            sworddash.at(4) = guesschar;
-            cout << "You guessed the fifth letter correct!" << endl;
-        }
-        if(letterguess.length() > 1)
+
+        if (letterguess.length() > 1)
         {
             endgame = true;
             cout << "Run the program again. You can only input one letter at a time." << endl;
         }
-        if(letterguess == "")
+        if (letterguess == "")
         {
-            endgame = true;    
+            endgame = true;
             cout << "Run the program again. You did not insert a letter." << endl;
+        }
+
+        if (endgame == false)
+        {
+            if (letterguess.length() == 1)
+            {
+                guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
+            }
+            if (guesschar == letter1)
+            {
+                sworddash.at(0) = guesschar;
+                cout << "You guessed the first letter correct!" << endl;
+            }
+            if (guesschar == letter2)
+            {
+                sworddash.at(1) = guesschar;
+                cout << "You guessed the second letter correct!" << endl;
+            }
+            if (guesschar == letter3)
+            {
+                sworddash.at(2) = guesschar;
+                cout << "You guessed the third letter correct!" << endl;
+            }
+            if (guesschar == letter4)
+            {
+                sworddash.at(3) = guesschar;
+                cout << "You guessed the fourth letter correct!" << endl;
+            }
+            if (guesschar == letter5)
+            {
+                sworddash.at(4) = guesschar;
+                cout << "You guessed the fifth letter correct!" << endl;
+            }
         }
     }
 
-    
 
-    if(endgame == false)
+
+    if (endgame == false)
     {
-
-        if(sworddash.at(0) == letter1)
+        if (sworddash.at(0) == letter1)
         {
-            if(sworddash.at(1) == letter2)
+            if (sworddash.at(1) == letter2)
             {
-                if(sworddash.at(2) == letter3)
+                if (sworddash.at(2) == letter3)
                 {
-                    if(sworddash.at(3) == letter4)
+                    if (sworddash.at(3) == letter4)
                     {
-                        if(sworddash.at(4) == letter5)
+                        if (sworddash.at(4) == letter5)
                         {
                             endgame = true;
                             cout << "You guessed the word correctly in " << guesses << " guesses! You Win!" << endl;
@@ -519,12 +522,12 @@ int main()
     //============================================
     //4th Word Guess
     //============================================
-    if(endgame == false)
+    if (endgame == false)
     {
         cout << sworddash << endl;
         cout << "You have " << guessesleft << " guesses left. Take a guess at the word: ";
         cin >> wordguess;
-        
+
         if (wordguess.length() == 5)
         {
             wordguess1 = tolower(wordguess.at(0));
@@ -533,23 +536,23 @@ int main()
             wordguess4 = tolower(wordguess.at(3));
             wordguess5 = tolower(wordguess.at(4));
 
-            if(wordguess1 == letter1)
+            if (wordguess1 == letter1)
             {
-                if(wordguess2 == letter2)
+                if (wordguess2 == letter2)
                 {
-                    if(wordguess3 == letter3)
+                    if (wordguess3 == letter3)
                     {
-                        if(wordguess4 == letter4)
+                        if (wordguess4 == letter4)
                         {
-                            if(wordguess5 == letter5)
+                            if (wordguess5 == letter5)
                             {
                                 endgame = true;
                                 cout << "You guessed the word correctly in " << guesses;
-                                if(guesses == 1)
+                                if (guesses == 1)
                                 {
                                     cout << " guess! You Win!" << endl;
                                 }
-                                if(guesses > 1)
+                                if (guesses > 1)
                                 {
                                     cout << " guesses! You Win!" << endl;
                                 }
@@ -561,8 +564,8 @@ int main()
         }
 
     }
-        
-    if(endgame == false)
+
+    if (endgame == false)
     {
         cout << endl << sworddash << endl;
         guessesleft --;
@@ -571,68 +574,72 @@ int main()
     //============================================
     //5th letter guess
     //============================================
-    
-    if(endgame == false)
+
+    if (endgame == false)
     {
-        guesses ++;
+        guesses++;
         cout << "You have " << guessesleft << " guess left. Guess a letter: ";
         cin.ignore();
         getline(cin, letterguess);
-        
-        if(letterguess.length() == 1)
-        {
-            guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
-        }
-        if(guesschar == letter1)
-        {
-            sworddash.at(0) = guesschar;
-            cout << "You guessed the first letter correct!" << endl;
-        }
-        if(guesschar == letter2)
-        {
-            sworddash.at(1) = guesschar;
-            cout << "You guessed the second letter correct!" << endl;
-        }
-        if(guesschar == letter3)
-        {
-            sworddash.at(2) = guesschar;
-        }
-        if(guesschar == letter4)
-        {
-            sworddash.at(3) = guesschar;
-            cout << "You guessed the fourth letter correct!" << endl;
-        }
-        if(guesschar == letter5)
-        {
-            sworddash.at(4) = guesschar;
-            cout << "You guessed the fifth letter correct!" << endl;
-        }
-        if(letterguess.length() > 1)
+
+        if (letterguess.length() > 1)
         {
             endgame = true;
             cout << "Run the program again. You can only input one letter at a time." << endl;
         }
-        if(letterguess == "")
+        if (letterguess == "")
         {
-            endgame = true;    
+            endgame = true;
             cout << "Run the program again. You did not insert a letter." << endl;
+        }
+
+        if (endgame == false)
+        {
+            if (letterguess.length() == 1)
+            {
+                guesschar = tolower(letterguess.at(0)); //probably a better way somehow to avoid using a string
+            }
+            if (guesschar == letter1)
+            {
+                sworddash.at(0) = guesschar;
+                cout << "You guessed the first letter correct!" << endl;
+            }
+            if (guesschar == letter2)
+            {
+                sworddash.at(1) = guesschar;
+                cout << "You guessed the second letter correct!" << endl;
+            }
+            if (guesschar == letter3)
+            {
+                sworddash.at(2) = guesschar;
+                cout << "You guessed the third letter correct!" << endl;
+            }
+            if (guesschar == letter4)
+            {
+                sworddash.at(3) = guesschar;
+                cout << "You guessed the fourth letter correct!" << endl;
+            }
+            if (guesschar == letter5)
+            {
+                sworddash.at(4) = guesschar;
+                cout << "You guessed the fifth letter correct!" << endl;
+            }
         }
     }
 
-    
 
-    if(endgame == false)
+
+    if (endgame == false)
     {
-
-        if(sworddash.at(0) == letter1)
+        if (sworddash.at(0) == letter1)
         {
-            if(sworddash.at(1) == letter2)
+            if (sworddash.at(1) == letter2)
             {
-                if(sworddash.at(2) == letter3)
+                if (sworddash.at(2) == letter3)
                 {
-                    if(sworddash.at(3) == letter4)
+                    if (sworddash.at(3) == letter4)
                     {
-                        if(sworddash.at(4) == letter5)
+                        if (sworddash.at(4) == letter5)
                         {
                             endgame = true;
                             cout << "You guessed the word correctly in " << guesses << " guesses! You Win!" << endl;
@@ -645,53 +652,52 @@ int main()
     //============================================
     //5th Word Guess
     //============================================
-    if(endgame == false)
+    if (endgame == false)
     {
         cout << sworddash << endl;
-        
         cout << "You have " << guessesleft << " guesses left. Take a guess at the word: ";
-                cin >> wordguess;
-                
-                if (wordguess.length() == 5)
-                {
-                    wordguess1 = tolower(wordguess.at(0));
-                    wordguess2 = tolower(wordguess.at(1));
-                    wordguess3 = tolower(wordguess.at(2));
-                    wordguess4 = tolower(wordguess.at(3));
-                    wordguess5 = tolower(wordguess.at(4));
+        cin >> wordguess;
 
-                    if(wordguess1 == letter1)
+        if (wordguess.length() == 5)
+        {
+            wordguess1 = tolower(wordguess.at(0));
+            wordguess2 = tolower(wordguess.at(1));
+            wordguess3 = tolower(wordguess.at(2));
+            wordguess4 = tolower(wordguess.at(3));
+            wordguess5 = tolower(wordguess.at(4));
+
+            if (wordguess1 == letter1)
+            {
+                if (wordguess2 == letter2)
+                {
+                    if (wordguess3 == letter3)
                     {
-                        if(wordguess2 == letter2)
+                        if (wordguess4 == letter4)
                         {
-                            if(wordguess3 == letter3)
+                            if (wordguess5 == letter5)
                             {
-                                if(wordguess4 == letter4)
+                                endgame = true;
+                                cout << "You guessed the word correctly in " << guesses;
+                                if (guesses == 1)
                                 {
-                                    if(wordguess5 == letter5)
-                                    {
-                                        endgame = true;
-                                        cout << "You guessed the word correctly in " << guesses;
-                                        if(guesses == 1)
-                                        {
-                                            cout << " guess! You Win!" << endl;
-                                        }
-                                        if(guesses > 1)
-                                        {
-                                            cout << " guesses! You Win!" << endl;
-                                        }
-                                    }
+                                    cout << " guess! You Win!" << endl;
+                                }
+                                if (guesses > 1)
+                                {
+                                    cout << " guesses! You Win!" << endl;
                                 }
                             }
                         }
                     }
                 }
+            }
+        }
     }
-    
-    if(endgame == false)
+
+    if (endgame == false)
     {
-        guessesleft --;
-        if(guessesleft == 0)
+        guessesleft--;
+        if (guessesleft == 0)
         {
             cout << "Sorry, you lose! The word was " << letter1 << letter2 << letter3 << letter4 << letter5 << ". Better luck next time." << endl;
         }
