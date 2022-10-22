@@ -73,7 +73,18 @@ int main()
 
     */
 
+    string word;
 
+    cout << "enter a word; ";
+    cin >> word;
+
+    
+
+    /*
+    ask user to enter word
+    if word contains uppercase vowel
+    replace vowel with -
+    */
 
 
 }
