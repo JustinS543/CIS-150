@@ -4,87 +4,89 @@ using namespace std;
 int main()
 {
 
-    //decrement loops are good for displaying something backwards
-    //counters must be initialized before the loop (assign a value to it)
-
-    //do-while loop
-    //do-while is post test, while is pre test
-    //do while is great for menu driven programs
-    //do whiles require semicolon after the while part
-
-    //
-
-    /*
-
-    do 
-    {
-        statement
-    } while(condition);
-
-    */
-
-
-    /*
+    int charcount;
     string word;
-    int i = 0;
-    int wordlen;
-
-    cout << "Enter a word: ";
-    cin >> word;
-    wordlen = word.length();
-
-    while(i < wordlen)
+    bool endgame = false;
+    bool valin = false;
+    string run;
+       
+    while(endgame == false)
     {
-        cout << word.at(i) << endl;
-        i++;
+        valin = false;
+
+        if(endgame == false)
+        {
+            cout << "Enter any size word: ";
+            cin >> word;
+        
+            for(charcount = 0; charcount < word.length(); charcount++)
+            {
+                if(word.at(charcount) == 'A' || word.at(charcount) == 'E' || word.at(charcount) == 'I' || word.at(charcount) == 'O' || word.at(charcount) == 'U')
+                {
+                word.at(charcount) = '-';
+                }
+            }
+        }
+
+        if(endgame == false)
+        {
+        cout << word << endl;
+        cout << "Run again: ";
+        }
+        
+        while(valin == false && endgame == false)
+        {
+            cin >> run;
+
+            if(run == "Y" || run == "y")
+            {
+                valin = true;
+            }
+            else if(run == "N" || run == "n")
+            {
+                endgame = true;
+                cout << "bye" << endl;
+            }
+            else
+            {
+                cout << "invalid input. Try again: " << endl;
+            }
+        }
+
+        if(endgame == false)
+        {
+            cout << "Enter any size word: ";
+            cin >> word;
+
+            for(charcount = 0; charcount < word.length(); charcount++)
+            {
+                if(word.at(charcount) == 'a' || word.at(charcount) == 'e' || word.at(charcount) == 'i' || word.at(charcount) == 'o' || word.at(charcount) == 'u')
+                {
+                word.at(charcount) = '-';
+                }
+            }
+
+            cout << word << endl;
+            cout << "Run again: ";
+            valin = false;
+            
+            while(valin == false && endgame == false)
+            {
+                cin >> run;
+                if(run == "Y" || run == "y")
+                {
+                    valin = true;
+                }
+                else if(run == "N" || run == "n")
+                {
+                    endgame = true;
+                    cout << "bye" << endl;
+                }
+                else
+                {
+                    cout << "invalid input. Try again: ";
+                }
+            }
+        }
     }
-    */
-
-    
-
-
-    //for loop
-
-    /*
-    
-    for(initialization; test; update)
-    {
-        statement;
-    }
-
-    //for example
-    
-    for(count = 1; count <= 5; count++)
-    {
-        cout << "hello" << endl;
-    }
-
-    for(int i = 0; i< 5; i++)
-    {
-        cout << i << endl;
-    }
-
-    if i is defined inside of a for loop, then it can only be used inside the loop
-
-    can init multiple items:
-        for(x = 1, y = 1; x < 5; x++)
-
-    
-
-    */
-
-    string word;
-
-    cout << "enter a word; ";
-    cin >> word;
-
-    
-
-    /*
-    ask user to enter word
-    if word contains uppercase vowel
-    replace vowel with -
-    */
-
-
 }
