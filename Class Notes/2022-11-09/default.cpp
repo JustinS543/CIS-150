@@ -44,7 +44,6 @@ int numberinput(int choice)
     if(choice == 2)
     {
         subtraction(input1, input2);
-        
     }
 }
 
