@@ -2,27 +2,27 @@
 #include <string>
 using namespace std;
 
-int addition(int num1, int num2)
+double addition(double num1, double num2)
 {
     return (num1 + num2);
 }
 
-int subtract(int num1, int num2)
+double subtract(double num1, double num2)
 {
     return (num1 - num2);
 }
 
-int multiply(int num1, int num2)
+double multiply(double num1, double num2)
 {
     return (num1 * num2);
 }
 
-int divide(int num1, int num2)
+double divide(double num1, double num2)
 {
     return (num1 / num2);
 }
 
-int absolute(int num1)
+double absolute(double num1)
 {
     if(num1 < 0)
     {
@@ -68,53 +68,53 @@ string selection()
     return choice;
 }
 
-int input1()
+double input1()
 {
-    int input1;
+    double input1;
     cout << "Enter a number:";
     cin >> input1;
     return input1;
 }
 
-int input2()
+double input2()
 {
-    int input2;
+    double input2;
     cout << "Enter a number:";
     cin >> input2;
     return input2;
 }
 
-void display(int num1)
+void display(double num1)
 {
-    int answer;
+    double answer;
     answer = absolute(num1);
     cout << "|" << num1 << "|" << " = " << answer << endl;
 }
 
-void display(int num1, int num2, string choice)
+void display(double num1, double num2, string choice)
 {
     if(choice == "1")
     {
-        int answer;
+        double answer;
         answer = addition(num1, num2);
         cout << num1 << " + " << num2 << " = " << answer << endl;
     }
     if(choice == "2")
     {
-        int answer;
+        double answer;
         answer = subtract(num1, num2);
         cout << num1 << " - " << num2 << " = " << answer << endl;
     }
     
     if(choice == "3")
     {
-        int answer;
+        double answer;
         answer = divide(num1, num2);
         cout << num1 << " / " << num2 << " = " << answer << endl;
     }
     if(choice == "4")
     {
-        int answer;
+        double answer;
         answer = multiply(num1, num2);
         cout << num1 << " * " << num2 << " = " << answer << endl;
     }
@@ -145,8 +145,8 @@ int main()
 {
     string choice;
     string gametest;
-    int in1;
-    int in2;
+    double in1;
+    double in2;
     bool endgame = false;
 
     while(endgame == false)
