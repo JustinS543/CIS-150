@@ -18,10 +18,6 @@ int choice()
 
 }
 
-
-
-
-
 int addition(int number1,int number2)
 {
     cout << number1 << " + " << number2 << " = " << number1 + number2 << endl;
@@ -50,8 +46,6 @@ int numberinput(int choice)
         subtraction(input1, input2);
         
     }
-
-
 }
 
 int main()
@@ -60,10 +54,6 @@ int main()
     menu();
     choicein = choice();
     numberinput(choicein);
-    
-
-    
-
 }
 
 
