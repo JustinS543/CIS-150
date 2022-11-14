@@ -79,7 +79,7 @@ double input1()
 double input2()
 {
     double input2;
-    cout << "Enter a number:";
+    cout << "Enter another number:";
     cin >> input2;
     return input2;
 }
@@ -99,20 +99,19 @@ void display(double num1, double num2, string choice)
         answer = addition(num1, num2);
         cout << num1 << " + " << num2 << " = " << answer << endl;
     }
-    if(choice == "2")
+    else if(choice == "2")
     {
         double answer;
         answer = subtract(num1, num2);
         cout << num1 << " - " << num2 << " = " << answer << endl;
     }
-    
-    if(choice == "3")
+    else if(choice == "3")
     {
         double answer;
         answer = divide(num1, num2);
         cout << num1 << " / " << num2 << " = " << answer << endl;
     }
-    if(choice == "4")
+    else if(choice == "4")
     {
         double answer;
         answer = multiply(num1, num2);
