@@ -41,9 +41,8 @@ void display(int pos)
 
 int main()
 {
-    int size = 10000;
     int totalNumbers = 10000;
-    int primeNumbers[size];
+    int primeNumbers[10000];
     static int pos = 0;
 
     for(int i = 2, j = 0; i < totalNumbers; i++)
